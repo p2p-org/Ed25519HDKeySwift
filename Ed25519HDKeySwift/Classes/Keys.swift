@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Keys {
-    let key: Data
-    let chainCode: Data
+extension Ed25519HDKey {
+    public struct Keys {
+        public let key: Data
+        public let chainCode: Data
+    }
 }

@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Ed25519HDKeySwift'
-  s.version          = '0.1.0'
-  s.summary          = 'Key Derivation for ed25519'
+  s.version          = '1.2.0'
+  s.summary          = 'Key Derivation for ed25519 written in swift'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = 'Key Derivation for ed25519 written in pure Swift'
+  s.description      = 'Key Derivation for ed25519 written in pure Swift, inspired by alepop/ed25519-hd-key'
 
   s.homepage         = 'https://github.com/p2p-org/Ed25519HDKeySwift'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'

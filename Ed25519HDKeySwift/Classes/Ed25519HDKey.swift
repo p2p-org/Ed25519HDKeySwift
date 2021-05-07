@@ -9,18 +9,18 @@ import Foundation
 import TweetNacl
 import CryptoSwift
 
-typealias Hex = String
-typealias Path = String
-
-struct Ed25519HDKey {
-    enum Error: Swift.Error {
+public struct Ed25519HDKey {
+    public typealias Hex = String
+    public typealias Path = String
+    
+    public enum Error: Swift.Error {
         case invalidDerivationPath
     }
     
-    static let ed25519Curve = "ed25519 seed"
-    static let hardenedOffset = 0x80000000
+    private static let ed25519Curve = "ed25519 seed"
+    public static let hardenedOffset = 0x80000000
     
-    static func getMasterKeyFromSeed(_ seed: Hex) throws -> Keys {
+    public static func getMasterKeyFromSeed(_ seed: Hex) throws -> Keys {
         let hmacKey = ed25519Curve.bytes
         let hmac = HMAC(key: hmacKey, variant: .sha512)
         let entropy = try hmac.authenticate(Data(hex: seed).bytes)
@@ -44,13 +44,15 @@ struct Ed25519HDKey {
         return Keys(key: IL, chainCode: IR)
     }
     
-    static func getPublicKey(privateKey: Data, withZeroBytes: Bool = true) throws -> Data
+    public static func getPublicKey(privateKey: Data, withZeroBytes: Bool = true) throws -> Data
     {
         let keyPair = try NaclSign.KeyPair.keyPair(fromSeed: privateKey)
-        return keyPair.publicKey
+        let signPk = keyPair.secretKey[32...]
+        let zero = Data([UInt8(0)])
+        return withZeroBytes ? Data(zero + signPk): Data(signPk)
     }
     
-    static func derivePath(_ path: Path, seed: Hex, offSet: Int = hardenedOffset) throws -> Keys
+    public static func derivePath(_ path: Path, seed: Hex, offSet: Int = hardenedOffset) throws -> Keys
     {
         guard path.isValidDerivationPath else {
             throw Error.invalidDerivationPath
