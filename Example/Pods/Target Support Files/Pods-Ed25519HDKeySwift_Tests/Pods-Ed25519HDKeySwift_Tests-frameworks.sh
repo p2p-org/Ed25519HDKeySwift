@@ -175,13 +175,13 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Ed25519HDKeySwift/Ed25519HDKeySwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/IDZSwiftCommonCrypto/IDZSwiftCommonCrypto.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TweetNacl/TweetNacl.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Ed25519HDKeySwift/Ed25519HDKeySwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/IDZSwiftCommonCrypto/IDZSwiftCommonCrypto.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TweetNacl/TweetNacl.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

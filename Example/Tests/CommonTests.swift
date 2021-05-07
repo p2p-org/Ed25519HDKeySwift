@@ -7,8 +7,7 @@
 //
 
 import XCTest
-//import CryptoSwift
-import IDZSwiftCommonCrypto
+import CryptoSwift
 @testable import Ed25519HDKeySwift
 
 class CommonTests: XCTestCase {
@@ -16,12 +15,8 @@ class CommonTests: XCTestCase {
 
     func testGetMasterKeyFromSeed() throws {
         let keys = try Ed25519HDKey.getMasterKeyFromSeed(vector1Seed)
-        let expectedKey = arrayFrom(hexString: "2b4be7f19ee27bbf30c667b642d5f4aa69fd169872f8fc3059c08ebae2eb19e7")
-        let expectedChainCode = arrayFrom(hexString: "90046a93de5380a72b5e45010748567d5ea02bbf6522f979e05c0d8d8ca9fffb")
-        
-        XCTAssertEqual(Data(expectedKey), keys?.key)
-        
-        XCTAssertEqual(Data(expectedChainCode), keys?.chainCode)
+        XCTAssertEqual(keys.key.toHexString(), "2b4be7f19ee27bbf30c667b642d5f4aa69fd169872f8fc3059c08ebae2eb19e7")
+        XCTAssertEqual(keys.chainCode.toHexString(), "90046a93de5380a72b5e45010748567d5ea02bbf6522f979e05c0d8d8ca9fffb")
     }
 
     func testPerformanceExample() throws {
