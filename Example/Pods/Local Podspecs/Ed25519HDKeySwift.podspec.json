@@ -1,0 +1,30 @@
+{
+  "name": "Ed25519HDKeySwift",
+  "version": "0.1.0",
+  "summary": "Key Derivation for ed25519",
+  "description": "Key Derivation for ed25519 written in pure Swift",
+  "homepage": "https://github.com/p2p-org/Ed25519HDKeySwift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Chung Tran": "bigearsenal@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/p2p-org/Ed25519HDKeySwift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "12.0"
+  },
+  "source_files": "Ed25519HDKeySwift/Classes/**/*",
+  "dependencies": {
+    "TweetNacl": [
+
+    ],
+    "IDZSwiftCommonCrypto": [
+
+    ]
+  }
+}

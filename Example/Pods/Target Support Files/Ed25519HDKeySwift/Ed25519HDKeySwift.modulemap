@@ -1,0 +1,6 @@
+framework module Ed25519HDKeySwift {
+  umbrella header "Ed25519HDKeySwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

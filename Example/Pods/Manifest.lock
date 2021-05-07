@@ -1,0 +1,27 @@
+PODS:
+  - Ed25519HDKeySwift (0.1.0):
+    - IDZSwiftCommonCrypto
+    - TweetNacl
+  - IDZSwiftCommonCrypto (0.13.0)
+  - TweetNacl (1.0.2)
+
+DEPENDENCIES:
+  - Ed25519HDKeySwift (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - IDZSwiftCommonCrypto
+    - TweetNacl
+
+EXTERNAL SOURCES:
+  Ed25519HDKeySwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Ed25519HDKeySwift: 946cc8eebe717bc107baa93c3fe6bc0203c9447a
+  IDZSwiftCommonCrypto: 00dd37cdfbd149312a7e5a582cf9909f8b129f44
+  TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
+
+PODFILE CHECKSUM: eb3cc0e532266e13e7cecc74d04a5e885cb431ab
+
+COCOAPODS: 1.10.1
