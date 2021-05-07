@@ -1,0 +1,6 @@
+use_frameworks!
+target 'Ed25519HDKeySwift_Tests' do
+  pod 'Ed25519HDKeySwift', :path => '../'
+  
+  
+end
