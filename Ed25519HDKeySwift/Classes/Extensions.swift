@@ -17,3 +17,17 @@ extension String {
         replacingOccurrences(of: "'", with: "")
     }
 }
+
+// MARK: - Bytes
+extension UInt32 {
+    var bytes: [UInt8] {
+        var bigEndian = bigEndian
+        let count = MemoryLayout<UInt32>.size
+        let bytePtr = withUnsafePointer(to: &bigEndian) {
+            $0.withMemoryRebound(to: UInt8.self, capacity: count) {
+                UnsafeBufferPointer(start: $0, count: count)
+            }
+        }
+        return Array(bytePtr)
+    }
+}
