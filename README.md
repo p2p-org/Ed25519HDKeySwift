@@ -1,6 +1,6 @@
 # Ed25519HDKeySwift
 
-[![CI Status](https://img.shields.io/travis/Chung Tran/Ed25519HDKeySwift.svg?style=flat)](https://travis-ci.org/Chung Tran/Ed25519HDKeySwift)
+[![CI Status](https://img.shields.io/travis/p2p-org/Ed25519HDKeySwift.svg?style=flat)](https://travis-ci.org/p2p-org/Ed25519HDKeySwift)
 [![Version](https://img.shields.io/cocoapods/v/Ed25519HDKeySwift.svg?style=flat)](https://cocoapods.org/pods/Ed25519HDKeySwift)
 [![License](https://img.shields.io/cocoapods/l/Ed25519HDKeySwift.svg?style=flat)](https://cocoapods.org/pods/Ed25519HDKeySwift)
 [![Platform](https://img.shields.io/cocoapods/p/Ed25519HDKeySwift.svg?style=flat)](https://cocoapods.org/pods/Ed25519HDKeySwift)
